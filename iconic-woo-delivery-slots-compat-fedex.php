@@ -72,3 +72,12 @@ function iconic_compat_fedex_get_zoneless_rates() {
 
 	return $rates;
 }
+
+
+/**
+ * Activate the plugin.
+ */
+function iconic_compat_fedex__activate() {
+	delete_transient( 'iconic-wds-shipping-methods' );
+}
+register_activation_hook( __FILE__, 'iconic_compat_fedex__activate' );
